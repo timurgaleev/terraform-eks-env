@@ -1,7 +1,7 @@
 # k8s
 
-[![GitHub Actions status](https://github.com/timzu/act-build/workflows/Build-Tag/badge.svg)](https://github.com/timurgaleev/terraform-eks-env-workshop/actions)
-[![GitHub Releases](https://img.shields.io/github/release/timzu/act-build.svg)](https://github.com/timurgaleev/terraform-eks-env-workshop/releases)
+[![GitHub Actions status](https://github.com/timurgaleev/terraform-eks-env-workshop/workflows/Build-Push/badge.svg)](https://github.com/timurgaleev/terraform-eks-env-workshop/actions)
+[![GitHub Releases](https://img.shields.io/github/release/timurgaleev/terraform-eks-env-workshop.svg)](https://github.com/timurgaleev/terraform-eks-env-workshop/releases)
 
 ## Prerequsite
 
