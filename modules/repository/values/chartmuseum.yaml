@@ -27,7 +27,7 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/whitelist-source-range: "0.0.0.0/0"
   hosts:
-    - name: "chartmuseum.timzu.com"
+    - name: "chartmuseum.godapp.de"
       path: /
       tls: true
       tlsSecret: chartmuseum-tls

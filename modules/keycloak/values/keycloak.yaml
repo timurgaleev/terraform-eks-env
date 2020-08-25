@@ -12,11 +12,11 @@ keycloak:
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/whitelist-source-range: "0.0.0.0/0"
     hosts:
-      - "keycloak.timzu.com"
+      - "keycloak.godapp.de"
     tls:
       - secretName: keycloak-tls
         hosts:
-          - "keycloak.timzu.com"
+          - "keycloak.godapp.de"
 
   podAnnotations:
     cluster-autoscaler.kubernetes.io/safe-to-evict: "false"

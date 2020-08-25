@@ -1,10 +1,5 @@
-# argo & argo-events
-
-variable "argo_gatekeeper" {
-  default = true
-}
-
 resource "helm_release" "argo" {
+  count = var.argo_count ? 1 : 0
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argo"
   version    = var.argo_argo_version
@@ -18,7 +13,7 @@ resource "helm_release" "argo" {
 
   set {
     name  = "server.ingress.enabled"
-    value = var.argo_gatekeeper ? false : true
+    value = var.argo_count ? false : true
   }
 
   set {
@@ -34,6 +29,7 @@ resource "helm_release" "argo" {
 }
 
 # resource "helm_release" "argo-events" {
+#   count = var.argo_count ? 1 : 0
 #   repository = "https://argoproj.github.io/argo-helm"
 #   chart      = "argo-events"
 #   version    = var.argo_argo_events_version
@@ -51,7 +47,7 @@ resource "helm_release" "argo" {
 # }
 
 resource "helm_release" "argo-gatekeeper" {
-  count = var.argo_gatekeeper ? 1 : 0
+  count = var.argo_count ? 1 : 0
 
   repository = "https://gabibbo97.github.io/charts/"
   chart      = "keycloak-gatekeeper"
@@ -75,6 +71,7 @@ resource "helm_release" "argo-gatekeeper" {
 }
 
 resource "kubernetes_cluster_role_binding" "admin-argo-default" {
+  count = var.argo_count ? 1 : 0
   metadata {
     name = "admin:argo:default"
   }
@@ -97,6 +94,7 @@ resource "kubernetes_cluster_role_binding" "admin-argo-default" {
 }
 
 resource "kubernetes_cluster_role_binding" "edit-default-default" {
+  count = var.argo_count ? 1 : 0
   metadata {
     name = "edit:default:default"
   }
@@ -117,6 +115,7 @@ resource "kubernetes_cluster_role_binding" "edit-default-default" {
 # argo-cd & argo-rollouts
 
 resource "helm_release" "argo-rollouts" {
+  count = var.argo_count ? 1 : 0
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argo-rollouts"
   version    = var.argo_argo_rollouts_version
@@ -132,6 +131,7 @@ resource "helm_release" "argo-rollouts" {
 }
 
 resource "helm_release" "argo-cd" {
+  count = var.argo_count ? 1 : 0
   repository = "https://argoproj.github.io/argo-helm"
   chart      = "argo-cd"
   version    = var.argo_argo_cd_version

@@ -1,18 +1,3 @@
-#######
-variable "environment" {}
-variable "cluster_name" {}
-variable "vpc_id" {}
-
-data "aws_subnet_ids" "all" {
-  vpc_id = var.vpc_id
-}
-
-data "aws_security_group" "default" {
-  vpc_id = var.vpc_id
-  name   = "default"
-}
-
-
 module "mysql_server_sg" {
   source  = "terraform-aws-modules/security-group/aws//modules/mysql"
   version = "~> 3.0"
@@ -29,15 +14,11 @@ resource "random_string" "dbpassword" {
   special = false
 }
 
-variable "db_backup_retention" {}
-variable "instance_class" {}
-variable "allocated_storage" {}
-
 module "mysql" {
   source  = "terraform-aws-modules/rds/aws"
   version = "~> 2.0"
 
-  identifier = demo-db"
+  identifier = "demo-db"
 
   engine            = "mysql"
   engine_version    = "5.7.19"

@@ -1,51 +1,11 @@
-terraform {
-  backend "s3" {
-    bucket         = "tfstate-demo-infra"
-    key            = "terraform/states/eks-demo-charts.tfstate"
-    region         = "eu-central-1"
-    encrypt        = true
-    dynamodb_table = "tfstate_demo"
-  }
-  required_version = ">= 0.12.0"
-}
-
-### Module: network
-module "network" {
-  source             = "./modules/network"
-
-  environment        = var.environment
-
-  availability_zones = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
-
-  cluster_name       = var.cluster_name
-
-  ### vpc: 10.${var.network}.0.0/16
-  network            = var.network_id
-}
-
-### Module: Kubernetes 
-
-module "kubernetes" {
-  source              = "./modules/kubernetes"
-
-  environment         = var.environment
-  cluster_name        = var.cluster_name
-  max_cluster_size    = var.spot_max_cluster_size
-  desired_capacity    = var.spot_desired_capacity
-  min_cluster_size    = var.spot_min_cluster_size
-  cluster_version     = var.cluster_version
-  instance_type       = var.spot_instance_type
-  aws_region          = data.aws_region.current.name
-  vpc_id              = module.network.vpc_id
-  private_subnets     = module.network.private_subnets
-}
-
-### Modules
-
-module "artifactory" {
-  source = "./modules/artifactory"
-
+### Eks-charts
+#####################################################
+module "repository" {
+  source = "./modules/repository"
+  chartmuseum_count             = var.chartmuseum_enabled
+  nexus_count                   = var.nexus_enabled
   stable_chartmuseum_version    = var.stable_chartmuseum
+  archiva_version               = var.archiva_enabled
   oteemo_sonatype_nexus_version = var.oteemo_sonatype_nexus
 }
 
@@ -59,7 +19,7 @@ module "ingress" {
 
   domain              = var.domains
   cert_manager_email  = var.cert_manager_email
-  module_depends_on   = [module.monitoring.prometheus-operator]
+  module_depends_on   = [module.monitoring.prometheus-operator, module.kubernetes.cluster_name]
 }
 
 module "monitoring" {
@@ -75,11 +35,13 @@ module "keycloak" {
   module_depends_on             = [module.monitoring.prometheus-operator]
 }
 
-# module "istio" {
-#   source                                = "./modules/istio"
-#   gabibbo97_keycloak_gatekeeper_version = var.gabibbo97_keycloak_gatekeeper
-#   module_depends_on                     = [module.keycloak.keycloak_realese]
-# }
+module "istio" {
+  source                                = "./modules/istio"
+  tracing_gatekeeper_count              = var.tracing_gatekeeper_enabled
+  kiali_gatekeeper_count                = var.kiali_gatekeeper_enabled
+  gabibbo97_keycloak_gatekeeper_version = var.gabibbo97_keycloak_gatekeeper
+  module_depends_on                     = [module.keycloak.keycloak_realese]
+}
 
 module "weave" {
   source                                = "./modules/weave"
@@ -90,6 +52,7 @@ module "weave" {
 
 module "jenkins" {
   source            = "./modules/jenkins"
+  jenkins_count     = var.jenkins_enabled
   module_depends_on = [module.monitoring.prometheus-operator]
   jenkins_version   = var.stable_jenkins
 }
@@ -100,6 +63,7 @@ module "jenkins" {
 
 module "sonarqube" {
   source              = "./modules/sonarqube"
+  sonarqube_count     = var.sonarqube_enabled
   module_depends_on   = [module.monitoring.prometheus-operator]
   sonarqube_version   = var.oteemo_sonarqube
 }
@@ -109,22 +73,10 @@ module "loki" {
   module_depends_on = [module.monitoring.prometheus-operator]
 }
 
-module "rds" {
-  source        = "./modules/rds"
-
-  environment   = var.environment
-  cluster_name  = var.cluster_name
-  vpc_id        = module.network.vpc_id
-
-  ### DB settings:
-  db_backup_retention = "30"
-  instance_class      = "db.t2.micro"
-  allocated_storage   = "5"
-}
-
 module "argo" {
   source                                = "./modules/argo"
   module_depends_on                     = [module.monitoring.prometheus-operator, module.keycloak.keycloak_realese]
+  argo_count                            = var.argo_enabled
   aws_region                            = data.aws_region.current.name
   argo_argo_version                     = var.argo_argo
   argo_argo_events_version              = var.argo_argo_events

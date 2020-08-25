@@ -2,7 +2,7 @@ nameOverride: archiva
 
 proxy:
   enabled: true
-  hostname: "archiva.timzu.com"
+  hostname: "archiva.godapp.de"
   proto: https
   pathPrefix: /
 

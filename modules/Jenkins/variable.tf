@@ -6,3 +6,7 @@ variable "jenkins_version" {
   type        = string
   description = "version"
 }
+
+variable "jenkins_count" {
+  default = []
+}

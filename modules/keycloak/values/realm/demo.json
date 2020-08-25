@@ -638,18 +638,18 @@
     {
       "id": "8d3945a0-9df5-4f1b-bc94-6edcb6b0d6d3",
       "clientId": "argo-cd",
-      "rootUrl": "https://argocd.timzu.com/",
-      "adminUrl": "https://argocd.timzu.com/",
+      "rootUrl": "https://argocd.godapp.de/",
+      "adminUrl": "https://argocd.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "d91fdbbc-5dbb-43ab-b388-ce4170ff79c6",
       "redirectUris": [
-        "https://argocd.timzu.com/*"
+        "https://argocd.godapp.de/*"
       ],
       "webOrigins": [
-        "https://argocd.timzu.com"
+        "https://argocd.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -697,18 +697,18 @@
     {
       "id": "859f441a-7820-4717-aa56-118762c4ba72",
       "clientId": "argo",
-      "rootUrl": "https://argo.timzu.com/",
-      "adminUrl": "https://argo.timzu.com/",
+      "rootUrl": "https://argo.godapp.de/",
+      "adminUrl": "https://argo.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "60820e7d-80a1-4e63-9ae1-b83972eaa020",
       "redirectUris": [
-        "https://argo.timzu.com/*"
+        "https://argo.godapp.de/*"
       ],
       "webOrigins": [
-        "https://argo.timzu.com"
+        "https://argo.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -757,18 +757,18 @@
     {
       "id": "553f5b5f-1598-4170-9cf7-15197458e864",
       "clientId": "grafana",
-      "rootUrl": "https://grafana.timzu.com/",
-      "adminUrl": "https://grafana.timzu.com/",
+      "rootUrl": "https://grafana.godapp.de/",
+      "adminUrl": "https://grafana.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "df7d395f-e833-49b6-b19c-eea8a54fb06a",
       "redirectUris": [
-        "https://grafana.timzu.com/*"
+        "https://grafana.godapp.de/*"
       ],
       "webOrigins": [
-        "https://grafana.timzu.com"
+        "https://grafana.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -815,18 +815,18 @@
     {
       "id": "8ee9c834-055e-4744-be15-6171be211f84",
       "clientId": "jenkins",
-      "rootUrl": "https://jenkins.timzu.com/",
-      "adminUrl": "https://jenkins.timzu.com/",
+      "rootUrl": "https://jenkins.godapp.de/",
+      "adminUrl": "https://jenkins.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "f76f3359-4be2-45dd-aba9-6f5204e62438",
       "redirectUris": [
-        "https://jenkins.timzu.com/*"
+        "https://jenkins.godapp.de/*"
       ],
       "webOrigins": [
-        "https://jenkins.timzu.com"
+        "https://jenkins.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -873,18 +873,18 @@
     {
       "id": "459a8f61-0cf3-45ed-a1b3-d1339dd8d16a",
       "clientId": "kiali",
-      "rootUrl": "https://kiali-istio.timzu.com/",
-      "adminUrl": "https://kiali-istio.timzu.com/",
+      "rootUrl": "https://kiali-istio.godapp.de/",
+      "adminUrl": "https://kiali-istio.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "746b5179-2b86-4c5c-8b1f-440e893f650b",
       "redirectUris": [
-        "https://kiali-istio.timzu.com/*"
+        "https://kiali-istio.godapp.de/*"
       ],
       "webOrigins": [
-        "https://kiali-istio.timzu.com"
+        "https://kiali-istio.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -932,18 +932,18 @@
     {
       "id": "8312e7b4-d18a-4b54-bf98-67d62ffce042",
       "clientId": "sonarqube",
-      "rootUrl": "https://sonarqube.timzu.com/",
-      "adminUrl": "https://sonarqube.timzu.com/",
+      "rootUrl": "https://sonarqube.godapp.de/",
+      "adminUrl": "https://sonarqube.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "5ad5e8a7-85f2-44cf-979c-dd8faf53e84c",
       "redirectUris": [
-        "https://sonarqube.timzu.com/*"
+        "https://sonarqube.godapp.de/*"
       ],
       "webOrigins": [
-        "https://sonarqube.timzu.com"
+        "https://sonarqube.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -977,18 +977,18 @@
     {
       "id": "18a7c215-a6cf-4ac0-8abe-39fb2d5c47a7",
       "clientId": "tracing",
-      "rootUrl": "https://tracing-istio.timzu.com/",
-      "adminUrl": "https://tracing-istio.timzu.com/",
+      "rootUrl": "https://tracing-istio.godapp.de/",
+      "adminUrl": "https://tracing-istio.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "0e94208b-1ea1-4e9b-b6e4-3e0b15c9fb9d",
       "redirectUris": [
-        "https://tracing-istio.timzu.com/*"
+        "https://tracing-istio.godapp.de/*"
       ],
       "webOrigins": [
-        "https://tracing-istio.timzu.com"
+        "https://tracing-istio.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -1036,18 +1036,18 @@
     {
       "id": "61b7101e-16c0-4050-a862-c641e0c9e5f3",
       "clientId": "weave-scope",
-      "rootUrl": "https://weave-scope.timzu.com/",
-      "adminUrl": "https://weave-scope.timzu.com/",
+      "rootUrl": "https://weave-scope.godapp.de/",
+      "adminUrl": "https://weave-scope.godapp.de/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "5b93b5c3-2337-4002-962a-c7770c770024",
       "redirectUris": [
-        "https://weave-scope.timzu.com/*"
+        "https://weave-scope.godapp.de/*"
       ],
       "webOrigins": [
-        "https://weave-scope.timzu.com"
+        "https://weave-scope.godapp.de"
       ],
       "notBefore": 0,
       "bearerOnly": false,

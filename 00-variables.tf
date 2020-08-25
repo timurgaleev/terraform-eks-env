@@ -58,5 +58,5 @@ variable "cert_manager_email" {
 
 variable "domains" {
   description = "domains name for ingress"
-  default     = "timzu.com"
+  default     = "godapp.de"
 }

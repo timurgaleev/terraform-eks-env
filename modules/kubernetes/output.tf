@@ -5,4 +5,5 @@ output "kubeconfig_filename" {
 
 output "cluster_name" {
   value = module.eks.cluster_id
+  description = "Name of eks cluster deploy"
 }

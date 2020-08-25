@@ -1,6 +1,7 @@
 # jenkins
 
 resource "helm_release" "jenkins" {
+  count = var.jenkins_count ? 1 : 0
   repository = "https://kubernetes-charts.storage.googleapis.com"
   chart      = "jenkins"
   version    = var.jenkins_version
@@ -22,6 +23,7 @@ resource "helm_release" "jenkins" {
 }
 
 resource "kubernetes_cluster_role_binding" "cluster-admin-jenkins-default" {
+  count = var.jenkins_count ? 1 : 0
   metadata {
     name = "cluster-admin:jenkins:default"
   }
@@ -45,6 +47,7 @@ resource "kubernetes_cluster_role_binding" "cluster-admin-jenkins-default" {
 
 # for jenkins
 resource "kubernetes_config_map" "jenkins-env" {
+  count = var.jenkins_count ? 1 : 0
   metadata {
     namespace = "default"
     name      = "jenkins-env"

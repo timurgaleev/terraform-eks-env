@@ -31,3 +31,7 @@ variable "argo_argo_cd_version" {
   type        = string
   description = "Argo CD Version"
 }
+
+variable "argo_count" {
+  default = []
+}
