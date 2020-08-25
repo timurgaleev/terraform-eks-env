@@ -58,5 +58,5 @@ variable "cert_manager_email" {
 
 variable "domains" {
   description = "domains name for ingress"
-  default     = "godapp.de"
+  default     = "supersite.dot"
 }

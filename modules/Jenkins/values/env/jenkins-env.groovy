@@ -5,19 +5,19 @@ def role = "devops"
 @Field
 def cluster = "EKS-DEMO"
 @Field
-def base_domain = "godapp.de"
+def base_domain = "supersite.dot"
 @Field
 def slack_token = "REPLACEME/REPLACEME/REPLACEME"
 @Field
-def jenkins = "jenkins.godapp.de"
+def jenkins = "jenkins.supersite.dot"
 @Field
-def archiva = "archiva.godapp.de"
+def archiva = "archiva.supersite.dot"
 @Field
-def chartmuseum = "chartmuseum.godapp.de"
+def chartmuseum = "chartmuseum.supersite.dot"
 @Field
-def nexus = "nexus.godapp.de"
+def nexus = "nexus.supersite.dot"
 @Field
-def sonarqube = "sonarqube.godapp.de"
+def sonarqube = "sonarqube.supersite.dot"
 @Field
 def registry = "249565476171.dkr.ecr.eu-central-1.amazonaws.com"
 return this

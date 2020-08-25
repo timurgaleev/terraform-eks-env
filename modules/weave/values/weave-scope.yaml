@@ -11,8 +11,8 @@ weave-scope-frontend:
     paths:
       - /
     hosts:
-      - weave-scope.godapp.de
+      - weave-scope.supersite.dot
     tls:
       - secretName: weave-scope-tls
         hosts:
-          - weave-scope.godapp.de
+          - weave-scope.supersite.dot

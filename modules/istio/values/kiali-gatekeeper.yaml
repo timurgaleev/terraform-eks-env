@@ -1,6 +1,6 @@
 nameOverride: kiali-gatekeeper
 
-discoveryURL: https://keycloak.godapp.de/auth/realms/demo
+discoveryURL: https://keycloak.supersite.dot/auth/realms/demo
 
 upstreamURL: http://kiali-gatekeeper.istio-system.svc.cluster.local:20001
 
@@ -15,8 +15,8 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/whitelist-source-range: "0.0.0.0/0"
   hosts:
-    - "kiali-istio.godapp.de"
+    - "kiali-istio.supersite.dot"
   tls:
     - secretName: kiali-tls
       hosts:
-        - "kiali-istio.godapp.de"
+        - "kiali-istio.supersite.dot"
