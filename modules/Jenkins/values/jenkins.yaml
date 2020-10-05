@@ -100,7 +100,7 @@ master:
                 branchSources {
                   git {
                       id = 'sample-spring'
-                      remote('https://github.com/timurgaleev/sample-spring.git')
+                      remote('https://github.com/timurgaleev/demo-spring.git')
                   }
                 }
                 orphanedItemStrategy {
