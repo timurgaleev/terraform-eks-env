@@ -11,7 +11,7 @@ data "template_file" "private" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.17.0"
+  version = "3.2.0"
 
   name = "${var.environment}"
 
